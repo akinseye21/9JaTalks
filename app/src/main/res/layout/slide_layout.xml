@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="@drawable/img1"
+        android:id="@+id/slide_relativeLayout">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:gravity="center">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join the club"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                android:layout_marginTop="100dp"
+                android:id="@+id/text1"
+                android:fontFamily="@font/poppinssemibold" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Come yarn your mata"
+                android:textColor="#ffffff"
+                android:textSize="25dp"
+                android:id="@+id/text2"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/poppinssemibold" />
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Give your constructive opinions in discussion forums where \nyou can share photos, videos and articles"
+                android:textColor="#ffffff"
+                android:textSize="10dp"
+                android:id="@+id/text3"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:fontFamily="@font/poppinsregular" />
+
+        <Button
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_line_buttong"
+                android:fontFamily="@font/poppinsbold"
+                android:id="@+id/register"
+                android:text="Register"
+                android:textAllCaps="false"
+                android:textSize="12dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

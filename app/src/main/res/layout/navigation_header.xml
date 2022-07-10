@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/white"
+        android:layout_width="250dp"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="#696b6e">
+
+        <ImageView
+                android:id="@+id/img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/logo2" />
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/white_card"
+            android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/user"
+                app:civ_border_color="#696b6e"
+                app:civ_border_width="1dp"
+                app:civ_circle_background_color="#696b6e" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Akinseye Abayomi"
+                android:textColor="#696b6e"
+                android:textSize="10dp" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="Member"
+                android:textColor="#696b6e"
+                android:textSize="8dp" />
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rel1">
+
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <RelativeLayout
+                            android:id="@+id/rel2"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="80dp">
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center"
+                                android:id="@+id/activity"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                            <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/activity" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsregular"
+                                    android:text="Activities"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/resources"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                            <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/resources" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsregular"
+                                    android:text="Resources"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                            android:id="@+id/rel3"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rel2"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp">
+
+                        <LinearLayout
+                                android:id="@+id/photo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:layout_marginRight="15dp"
+                                android:padding="10dp">
+
+                            <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/photos" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsregular"
+                                    android:text="Photos"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:id="@+id/watch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginRight="15dp"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                            <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/watch" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsregular"
+                                    android:text="Videos"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/rel4"
+                            android:layout_below="@id/rel3"
+                            android:layout_marginTop="30dp">
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center"
+                                android:id="@+id/people"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                            <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/people" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsregular"
+                                    android:text="People"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="15dp"
+                                android:gravity="center"
+                                android:id="@+id/groups"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                            <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/groups" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsregular"
+                                    android:text="Groups"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                            android:id="@+id/rel5"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/rel4"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="100dp">
+
+                        <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:gravity="center"
+                                android:id="@+id/forums"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                            <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/forum" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsregular"
+                                    android:text="Forums"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                                android:id="@+id/opportunities"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:padding="10dp">
+
+                            <ImageView
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:src="@drawable/opportunity" />
+
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/poppinsregular"
+                                    android:text="Opportunities"
+                                    android:textColor="@color/black"
+                                    android:textSize="10dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+
+<!--    <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:background="#696b6e">-->
+
+<!--        <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/white"-->
+<!--                android:layout_marginTop="300dp">-->
+
+
+
+<!--        </LinearLayout>-->
+
+
+<!--        <ImageView-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_marginTop="70dp"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:id="@+id/img"-->
+<!--                android:src="@drawable/logo2"/>-->
+
+<!--        <LinearLayout-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/img"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="40dp"-->
+<!--                android:background="@drawable/white_card"-->
+<!--                android:orientation="vertical">-->
+
+<!--            <de.hdodenhof.circleimageview.CircleImageView-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:src="@drawable/user"-->
+<!--                    app:civ_border_color="#696b6e"-->
+<!--                    app:civ_border_width="1dp"-->
+<!--                    app:civ_circle_background_color="#696b6e" />-->
+
+<!--            <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:fontFamily="@font/poppinsmedium"-->
+<!--                    android:text="Akinseye Abayomi"-->
+<!--                    android:textColor="#696b6e"-->
+<!--                    android:textSize="10dp" />-->
+
+<!--            <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:layout_marginBottom="30dp"-->
+<!--                    android:fontFamily="@font/poppinsmedium"-->
+<!--                    android:text="Member"-->
+<!--                    android:textColor="#696b6e"-->
+<!--                    android:textSize="8dp" />-->
+<!--        </LinearLayout>-->
+
+
+
+
+
+<!--    </RelativeLayout>-->
+
+
+
+</RelativeLayout>
