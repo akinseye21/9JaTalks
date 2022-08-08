@@ -25,6 +25,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:id="@+id/profile"
             android:layout_marginTop="250dp"
             android:background="@drawable/white_card"
             android:orientation="vertical">
@@ -87,11 +88,11 @@
                             android:layout_marginTop="80dp">
 
                         <LinearLayout
+                                android:id="@+id/activity"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentLeft="true"
                                 android:gravity="center"
-                                android:id="@+id/activity"
                                 android:orientation="vertical"
                                 android:padding="10dp">
 
@@ -152,6 +153,7 @@
                                 android:layout_marginRight="15dp"
                                 android:padding="10dp">
 
+
                             <ImageView
                                     android:layout_width="15dp"
                                     android:layout_height="15dp"
@@ -201,11 +203,11 @@
                             android:layout_marginTop="30dp">
 
                         <LinearLayout
+                                android:id="@+id/people"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_alignParentLeft="true"
                                 android:gravity="center"
-                                android:id="@+id/people"
                                 android:orientation="vertical"
                                 android:padding="10dp">
 

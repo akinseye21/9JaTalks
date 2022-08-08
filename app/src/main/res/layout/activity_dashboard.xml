@@ -38,18 +38,18 @@
                     android:layout_centerVertical="true"/>
 
             <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/user"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:backgroundTint="@color/white"
-                    android:src="@drawable/user"
-                    android:tint="@color/white"
-                    app:civ_border_color="#696b6e"
-                    app:civ_border_overlay="true"
-                    app:civ_border_width="0.5dp"
-                    app:civ_circle_background_color="@color/white" />
+                android:id="@+id/user"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/user"
+                android:tint="@color/white"
+                app:civ_border_color="#696b6e"
+                app:civ_border_overlay="true"
+                app:civ_border_width="0.5dp"
+                app:civ_circle_background_color="@color/white" />
         </RelativeLayout>
 
         <LinearLayout

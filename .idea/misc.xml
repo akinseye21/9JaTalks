@@ -3,28 +3,46 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/card1.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/card_like.xml" value="0.127" />
+        <entry key="app/src/main/res/drawable/card_user.xml" value="0.135" />
         <entry key="app/src/main/res/drawable/edittext.xml" value="0.127" />
         <entry key="app/src/main/res/drawable/green_card.xml" value="0.127" />
+        <entry key="app/src/main/res/drawable/green_card2.xml" value="0.135" />
         <entry key="app/src/main/res/drawable/green_login.xml" value="0.127" />
         <entry key="app/src/main/res/drawable/new_login.xml" value="0.127" />
         <entry key="app/src/main/res/drawable/new_login2.xml" value="0.127" />
+        <entry key="app/src/main/res/drawable/new_login3.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/plain_white_card.xml" value="0.127" />
+        <entry key="app/src/main/res/drawable/plain_white_card2.xml" value="0.165" />
         <entry key="app/src/main/res/drawable/social.xml" value="0.127" />
+        <entry key="app/src/main/res/drawable/user_banner.xml" value="0.135" />
         <entry key="app/src/main/res/drawable/white_card.xml" value="0.127" />
         <entry key="app/src/main/res/drawable/white_line_buttong.xml" value="0.127" />
+        <entry key="app/src/main/res/layout/activity_all_users.xml" value="0.24427083333333333" />
+        <entry key="app/src/main/res/layout/activity_category_view.xml" value="0.2078804347826087" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_event_detail.xml" value="0.2078804347826087" />
+        <entry key="app/src/main/res/layout/activity_events.xml" value="0.2078804347826087" />
+        <entry key="app/src/main/res/layout/activity_groups.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_resources.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/activity_resources.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_resources_details.xml" value="0.2078804347826087" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/activity_user_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/custom_popup.xml" value="0.1390625" />
         <entry key="app/src/main/res/layout/custom_popup_login.xml" value="0.24427083333333333" />
+        <entry key="app/src/main/res/layout/event_item.xml" value="0.18125" />
         <entry key="app/src/main/res/layout/fragment_all_members_feed.xml" value="0.24427083333333333" />
         <entry key="app/src/main/res/layout/fragment_mentions_feed.xml" value="0.23125" />
         <entry key="app/src/main/res/layout/grid_view_item.xml" value="0.24427083333333333" />
+        <entry key="app/src/main/res/layout/group_view_item.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/layout/navigation_header.xml" value="0.25" />
         <entry key="app/src/main/res/layout/navigation_header2.xml" value="0.24322916666666666" />
+        <entry key="app/src/main/res/layout/resources_view.xml" value="0.2078804347826087" />
         <entry key="app/src/main/res/layout/slide_layout.xml" value="0.24427083333333333" />
+        <entry key="app/src/main/res/layout/user_view_item.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu_registered_user.xml" value="0.24322916666666666" />
         <entry key="app/src/main/res/menu/menu_unregisered_user.xml" value="0.24427083333333333" />
       </map>

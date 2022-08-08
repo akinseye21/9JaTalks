@@ -52,6 +52,8 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
         actionBarDrawerToggle.syncState();
         navigationView = findViewById(R.id.navigation);
         View hView = navigationView.getHeaderView(0);
+
+        LinearLayout profile = hView.findViewById(R.id.profile);
         LinearLayout activity = hView.findViewById(R.id.activity);
         LinearLayout resources = hView.findViewById(R.id.resources);
         LinearLayout photos = hView.findViewById(R.id.photo);
@@ -63,10 +65,19 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
 
         navigationView_right = findViewById(R.id.navigation_right);
 
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //show activity page
+                Intent i = new Intent(getApplicationContext(), UserProfile.class);
+                startActivity(i);
+            }
+        });
         activity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //show activity page
+                drawerLayout.close();
             }
         });
         resources.setOnClickListener(new View.OnClickListener() {
@@ -93,12 +104,16 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
             @Override
             public void onClick(View v) {
                 //show activity page
+                Intent i = new Intent(getApplicationContext(), AllUsers.class);
+                startActivity(i);
             }
         });
         groups.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //show activity page
+                Intent i = new Intent(getApplicationContext(), Groups.class);
+                startActivity(i);
             }
         });
         forum.setOnClickListener(new View.OnClickListener() {

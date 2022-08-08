@@ -61,13 +61,14 @@
                     android:text="Login"
                     android:textColor="#ffffff"
                     android:textSize="10dp" />
+
             <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:id="@+id/cart"
-                    android:layout_toLeftOf="@+id/login"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/travel"/>
+                android:id="@+id/cart"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/login"
+                android:src="@drawable/travel" />
         </RelativeLayout>
         <ScrollView
                 android:layout_width="match_parent"
@@ -209,6 +210,21 @@
                                 android:textColor="@color/white"
                                 android:fontFamily="@font/poppinsregular"/>
                     </RelativeLayout>
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressBar"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Loading..."
+                        android:textColor="#ffffff"
+                        android:textStyle="bold"
+                        android:textSize="10dp"
+                        android:id="@+id/progressText"
+                        android:visibility="gone"/>
 
                     <Button
                             android:layout_width="match_parent"

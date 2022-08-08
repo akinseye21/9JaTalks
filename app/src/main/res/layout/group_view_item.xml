@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@color/white">
+
+    <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:background="@drawable/group_header"
+            android:id="@+id/banner"
+            android:gravity="center" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Election Observation"
+            android:textColor="@color/color1"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:id="@+id/groupName"
+            android:paddingTop="10dp"
+            android:fontFamily="@font/poppinsbold"/>
+
+    <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/green_card2"
+            android:orientation="horizontal"
+            android:id="@+id/join"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+        <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/forward"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                app:civ_border_overlay="true"
+                app:civ_circle_background_color="@color/white"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join here"
+                android:textColor="@color/white"
+                android:paddingLeft="5dp"
+                android:fontFamily="@font/poppinsregular"
+                android:textSize="12dp"/>
+    </LinearLayout>
+
+</LinearLayout>

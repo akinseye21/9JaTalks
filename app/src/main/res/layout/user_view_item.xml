@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/userInfo"
+    android:layout_margin="10dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
+        android:background="@drawable/plain_white_card">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/user"
+            android:id="@+id/img"
+            app:civ_circle_background_color="@color/white"
+            app:civ_border_overlay="true"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="1dp" />
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textColor="@color/black"
+            android:id="@+id/uname"
+            android:textSize="12dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:paddingTop="5dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="user.test@gmail.com"
+            android:textColor="@color/grey"
+            android:id="@+id/uemail"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="8dp"
+            android:fontFamily="@font/poppinslight"
+            android:padding="1dp"/>
+
+</LinearLayout>

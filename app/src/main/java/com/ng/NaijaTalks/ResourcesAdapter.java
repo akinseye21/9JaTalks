@@ -1,31 +1,57 @@
 package com.ng.NaijaTalks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ResourcesAdapter extends BaseAdapter {
+
     Context context;
-    int publications[];
-    String text[];
+    //category array
+    ArrayList<String> categories;
+    ArrayList<Integer> arr_category_id;
+
+    //post array
+    ArrayList<Integer> arr_post_id;
+    ArrayList<String> arr_post_date;
+    ArrayList<String> arr_post_title;
+    ArrayList<String> arr_post_content;
+    ArrayList<String> arr_post_image_link;
+    ArrayList<Integer> arr_post_category_id;
     LayoutInflater inflter;
 
-    public ResourcesAdapter(Context applicationContext, int[] pub, String[] txt) {
+    public ResourcesAdapter(Context applicationContext, ArrayList<String> categories, ArrayList<Integer> arr_category_id,
+                            ArrayList<Integer> arr_post_id, ArrayList<String> arr_post_date, ArrayList<String> arr_post_title, ArrayList<String> arr_post_content,
+                            ArrayList<String> arr_post_image_link, ArrayList<Integer> arr_post_category_id) {
         this.context = applicationContext;
-        this.publications = pub;
-        this.text = txt;
+        this.categories = categories;
+        this.arr_category_id = arr_category_id;
+        this.arr_post_id = arr_post_id;
+        this.arr_post_date = arr_post_date;
+        this.arr_post_title = arr_post_title;
+        this.arr_post_content = arr_post_content;
+        this.arr_post_image_link = arr_post_image_link;
+        this.arr_post_category_id = arr_post_category_id;
         inflter = (LayoutInflater.from(applicationContext));
     }
+
     @Override
     public int getCount() {
-        return publications.length;
+        return categories.size();
     }
     @Override
     public Object getItem(int i) {
@@ -39,12 +65,70 @@ public class ResourcesAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        convertView = inflter.inflate(R.layout.grid_view_item, null); // inflate the layout
-        TextView textView = (TextView) convertView.findViewById(R.id.tx);
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.img);
-        textView.setText(text[position]);
-        imageView.setImageResource(publications[position]);
+        convertView = inflter.inflate(R.layout.resources_view, null); // inflate the layout
+        TextView categoryName = (TextView) convertView.findViewById(R.id.category_name);
+        Button btn_title = (Button) convertView.findViewById(R.id.btn_title);
+        LinearLayout show = (LinearLayout) convertView.findViewById(R.id.show);
+//        TextView txt1 = (TextView) convertView.findViewById(R.id.tx1);
+//        TextView txt2 = (TextView) convertView.findViewById(R.id.tx2);
+//        TextView txt3 = (TextView) convertView.findViewById(R.id.tx3);
+//
+//        ImageView img1 = (ImageView) convertView.findViewById(R.id.img1);
+//        ImageView img2 = (ImageView) convertView.findViewById(R.id.img2);
+//        ImageView img3 = (ImageView) convertView.findViewById(R.id.img3);
+//
+//        RelativeLayout rel1 = (RelativeLayout) convertView.findViewById(R.id.rel1);
+//        RelativeLayout rel2 = (RelativeLayout) convertView.findViewById(R.id.rel2);
+//        RelativeLayout rel3 = (RelativeLayout) convertView.findViewById(R.id.rel3);
+
+        int[] rand_color = {R.color.color1, R.color.color2, R.color.color3, R.color.color4, R.color.color5,
+                R.color.purple_200, R.color.purple_500, R.color.purple_700, R.color.black,
+                R.color.md_red_50, R.color.md_red_100, R.color.md_red_200, R.color.md_red_300,
+                R.color.md_red_400, R.color.md_red_500, R.color.md_red_600, R.color.md_red_700,
+                R.color.md_red_800, R.color.md_red_900, R.color.md_pink_50, R.color.md_pink_100,
+                R.color.md_pink_200, R.color.md_pink_300, R.color.md_pink_400, R.color.md_pink_500,
+                R.color.teal_700, R.color.teal_200, R.color.md_teal_50, R.color.md_teal_500};
+
+        Random myRand = new Random();
+        int randNum1 = myRand.nextInt(rand_color.length);
+        btn_title.setBackgroundResource(rand_color[randNum1]);
+        categoryName.setText(categories.get(position));
+        show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, CategoryView.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putStringArrayListExtra("categories", categories);
+                intent.putIntegerArrayListExtra("category_id", arr_category_id);
+                intent.putIntegerArrayListExtra("post_id", arr_post_id);
+                intent.putStringArrayListExtra("post_date", arr_post_date);
+                intent.putStringArrayListExtra("post_title", arr_post_title);
+                intent.putStringArrayListExtra("post_content", arr_post_content);
+                intent.putStringArrayListExtra("post_image_link", arr_post_image_link);
+                intent.putIntegerArrayListExtra("post_category_id", arr_post_category_id);
+                intent.putExtra("clicked_category_id", categories.get(position));
+                intent.putExtra("clicked_id", arr_category_id.get(position));
+//                intent.putExtra("startDate", startDate);
+//                intent.putExtra("startTimeHour", startTimeHour);
+//                intent.putExtra("startTimeMinutes", startTimeMinutes);
+//                intent.putExtra("endDate", endDate);
+//                intent.putExtra("endTimeHour", endTimeHour);
+//                intent.putExtra("endTimeMinutes", endTimeMinutes);
+//                intent.putExtra("startTimeAmPm", startTimeAmPm);
+//                intent.putExtra("endTimeAmPm", endTimeAmPm);
+//                intent.putExtra("eventTitle", title.get(position));
+                context.startActivity(intent);
+            }
+        });
+
+
+
+
+
+
+
         return convertView;
 
     }
+
 }
