@@ -82,6 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/edittext"
+                    android:id="@+id/edtusername"
                     android:singleLine="true"
                     android:textSize="10dp"
                     android:paddingLeft="10dp"
@@ -101,6 +102,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/edittext"
+                    android:id="@+id/edtemail"
                     android:singleLine="true"
                     android:textSize="10dp"
                     android:paddingLeft="10dp"
@@ -135,7 +137,7 @@
                             android:fontFamily="@font/poppinsregular"
                             android:inputType="textPassword"
                             android:textSize="10dp"
-                            android:id="@+id/edtemail"
+                            android:id="@+id/edtpassword"
                             android:singleLine="true"
                             android:background="@android:color/transparent"/>
 
@@ -173,6 +175,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/edittext"
                     android:singleLine="true"
+                    android:id="@+id/edtfullname"
                     android:textSize="10dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
@@ -181,6 +184,13 @@
                     android:inputType="textPersonName"/>
 
         </LinearLayout>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/progressBar"
+                android:visibility="gone"/>
 
             <Button
                     android:layout_width="200dp"
@@ -191,7 +201,8 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="40dp"
                     android:layout_gravity="center"
-                    android:text="Complete Sign Up"
+                    android:id="@+id/btncomplete"
+                    android:text="Next"
                     android:textAllCaps="false"
                     android:textSize="10dp"
                     android:textColor="@color/white"

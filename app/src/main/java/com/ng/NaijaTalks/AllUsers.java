@@ -5,20 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.navigation.NavigationView;
+import com.ng.NaijaTalks.adapters.AllUserAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -174,7 +170,7 @@ public class AllUsers extends AppCompatActivity {
 
 
                                     listView = findViewById(R.id.listview);
-                                    AllUserAdapter  myAdapter=new AllUserAdapter(getApplicationContext(),username,email,fullname);
+                                    AllUserAdapter myAdapter=new AllUserAdapter(getApplicationContext(),username,email,fullname);
                                     listView.setAdapter(myAdapter);
                                 }
                             }

@@ -10,6 +10,8 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ng.NaijaTalks.adapters.IndividualResourcesAdapter;
+
 import java.util.ArrayList;
 
 public class CategoryView extends AppCompatActivity {
@@ -95,14 +97,15 @@ public class CategoryView extends AppCompatActivity {
                 title.add(post_title);
                 image.add(post_image);
                 content.add(post_content);
-                category_id.add(post_category_id);
+//                category_id.add(post_category_id);
+                category_id.add(clicked_id);
             }
         }
 
         if(date.size() == 0){
             nopost.setVisibility(View.VISIBLE);
         }else{
-            IndividualResourcesAdapter  myAdapter=new IndividualResourcesAdapter(getApplicationContext(),date,title,image,content,category_id);
+            IndividualResourcesAdapter myAdapter=new IndividualResourcesAdapter(getApplicationContext(),date,title,image,content,category_id);
             gridView.setAdapter(myAdapter);
         }
 

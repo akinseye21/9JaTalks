@@ -1,4 +1,4 @@
-package com.ng.NaijaTalks;
+package com.ng.NaijaTalks.adapters;
 
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -21,6 +21,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
+import com.ng.NaijaTalks.EventDetail;
+import com.ng.NaijaTalks.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -99,6 +101,12 @@ public class AllEventsAdapter extends BaseAdapter {
         int randNum1 = myRand.nextInt(rand_color.length);
         int randNum2 = myRand.nextInt(rand_color.length);
 
+        int[] rand_image = {R.drawable.hall1, R.drawable.hall2, R.drawable.hall3, R.drawable.hall4, R.drawable.hall5};
+
+        int randImg = myRand.nextInt(rand_image.length);
+
+        imageView.setImageResource(rand_image[randImg]);
+//        imageView.setBackgroundResource(rand_image[randImg]);
         btn_title.setBackgroundResource(rand_color[randNum1]);
         btn_info.setBackgroundResource(rand_color[randNum2]);
         event_title.setText(title.get(position));

@@ -131,20 +131,35 @@
                             android:layout_height="wrap_content"
                             android:id="@+id/image"
                             android:layout_margin="10dp"/>
-
-                        <VideoView
-                            android:id="@+id/videoView"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="200dp"
-                            android:layout_margin="10dp"/>
+                            android:layout_height="300dp"
+                            android:layout_marginBottom="60dp"
+                            android:id="@+id/rel">
+
+                            <WebView
+                                android:layout_width="match_parent"
+                                android:layout_height="300dp"
+                                android:id="@+id/webview"/>
+
+                            <ProgressBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:id="@+id/progressBar"/>
+
+                        </RelativeLayout>
+
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Download Document"
+                            android:text="View Document"
                             android:textColor="@color/color2"
                             android:textStyle="bold"
                             android:id="@+id/downloadDocument"
                             android:paddingLeft="10dp"
+                            android:layout_marginBottom="50dp"
                             android:fontFamily="@font/poppinsbold"/>
 
                     </LinearLayout>

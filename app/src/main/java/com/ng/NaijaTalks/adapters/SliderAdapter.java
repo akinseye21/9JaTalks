@@ -1,4 +1,4 @@
-package com.ng.NaijaTalks;
+package com.ng.NaijaTalks.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.ng.NaijaTalks.R;
 
 public class SliderAdapter extends PagerAdapter {
     Context context;

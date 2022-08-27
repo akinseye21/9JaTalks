@@ -38,11 +38,16 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
+    String email;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Intent i = getIntent();
+        email = i.getStringExtra("user_email");
 
         user = findViewById(R.id.user);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -62,6 +67,7 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
         LinearLayout groups = hView.findViewById(R.id.groups);
         LinearLayout forum = hView.findViewById(R.id.forums);
         LinearLayout opportunities = hView.findViewById(R.id.opportunities);
+        LinearLayout events = hView.findViewById(R.id.events);
 
         navigationView_right = findViewById(R.id.navigation_right);
 
@@ -70,6 +76,7 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
             public void onClick(View v) {
                 //show activity page
                 Intent i = new Intent(getApplicationContext(), UserProfile.class);
+                i.putExtra("email", email);
                 startActivity(i);
             }
         });
@@ -85,6 +92,7 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
             public void onClick(View v) {
                 //show activity page
                 Intent i = new Intent(getApplicationContext(), Resources.class);
+                i.putExtra("email", email);
                 startActivity(i);
             }
         });
@@ -105,6 +113,7 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
             public void onClick(View v) {
                 //show activity page
                 Intent i = new Intent(getApplicationContext(), AllUsers.class);
+                i.putExtra("email", email);
                 startActivity(i);
             }
         });
@@ -113,6 +122,7 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
             public void onClick(View v) {
                 //show activity page
                 Intent i = new Intent(getApplicationContext(), Groups.class);
+                i.putExtra("email", email);
                 startActivity(i);
             }
         });
@@ -126,6 +136,17 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
             @Override
             public void onClick(View v) {
                 //show activity page
+                Intent i = new Intent(getApplicationContext(), Opportunities.class);
+                i.putExtra("email", email);
+                startActivity(i);
+            }
+        });
+        events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), Events.class);
+                i.putExtra("email", email);
+                startActivity(i);
             }
         });
 

@@ -1,4 +1,4 @@
-package com.ng.NaijaTalks;
+package com.ng.NaijaTalks.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +17,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.ng.NaijaTalks.R;
+import com.ng.NaijaTalks.ResourcesDetails;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -80,6 +82,7 @@ public class IndividualResourcesAdapter extends BaseAdapter {
                 intent.putExtra("title", title.get(position));
                 intent.putExtra("date", date.get(position));
                 intent.putExtra("image", image.get(position));
+                intent.putExtra("content", content.get(position));
                 intent.putExtra("category_id", category_id.get(position));
                 context.startActivity(intent);
 

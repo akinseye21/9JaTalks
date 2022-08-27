@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+import com.ng.NaijaTalks.adapters.GroupAdapter;
 
 import java.util.ArrayList;
 
@@ -131,7 +132,7 @@ public class Groups extends AppCompatActivity {
         groupName.add("Stop Violence Against Women");
 
         listView = findViewById(R.id.listview);
-        GroupAdapter  myAdapter=new GroupAdapter(getApplicationContext(),banner,groupName);
+        GroupAdapter myAdapter=new GroupAdapter(getApplicationContext(),banner,groupName);
         listView.setAdapter(myAdapter);
     }
 }

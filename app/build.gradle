@@ -39,4 +39,10 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0' //circular imageview
 
     implementation 'com.github.bumptech.glide:glide:4.13.2' //glide
+//    implementation files('libs\\YouTubeAndroidPlayerApi.jar')
+//    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0'
+//    implementation 'com.github.barteksc:pdfium-android:1.8.2'
+//    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'//pdf viewer
+//    implementation 'io.github.ahmerafzal1:ahmer-pdfviewer:1.7.0'
+//    implementation 'com.github.afreakyelf:Pdf-Viewer:v1.0.7'
 }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
         android:layout_width="250dp"
         android:layout_height="match_parent">
 
@@ -252,60 +253,95 @@
 
 
                     <RelativeLayout
-                            android:id="@+id/rel5"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/rel4"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="30dp"
-                            android:layout_marginBottom="100dp">
+                        android:id="@+id/rel5"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rel4"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp">
 
                         <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentLeft="true"
-                                android:gravity="center"
-                                android:id="@+id/forums"
-                                android:orientation="vertical"
-                                android:padding="10dp">
+                            android:id="@+id/forums"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
 
                             <ImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:src="@drawable/forum" />
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/forum" />
 
                             <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppinsregular"
-                                    android:text="Forums"
-                                    android:textColor="@color/black"
-                                    android:textSize="10dp" />
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppinsregular"
+                                android:text="Forums"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
                         </LinearLayout>
 
                         <LinearLayout
-                                android:id="@+id/opportunities"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="10dp">
+                            android:id="@+id/opportunities"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
 
                             <ImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:src="@drawable/opportunity" />
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/opportunity" />
 
                             <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppinsregular"
-                                    android:text="Opportunities"
-                                    android:textColor="@color/black"
-                                    android:textSize="10dp" />
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppinsregular"
+                                android:text="Opportunities"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
                         </LinearLayout>
                     </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rel6"
+                        android:layout_below="@+id/rel5"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="100dp">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:id="@+id/events"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/calendar"
+                                app:tint="@color/grey" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppinsregular"
+                                android:text="Events"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
                 </RelativeLayout>
 
             </LinearLayout>

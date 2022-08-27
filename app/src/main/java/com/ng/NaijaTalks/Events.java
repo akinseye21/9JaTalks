@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.ng.NaijaTalks.adapters.AllEventsAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -79,7 +80,7 @@ public class Events extends AppCompatActivity {
 
 
                                     myList = findViewById(R.id.mylist);
-                                    AllEventsAdapter  myAdapter=new AllEventsAdapter(getApplicationContext(),arr_id,arr_title,arr_author);
+                                    AllEventsAdapter myAdapter=new AllEventsAdapter(getApplicationContext(),arr_id,arr_title,arr_author);
                                     myList.setAdapter(myAdapter);
                                 }
                             }

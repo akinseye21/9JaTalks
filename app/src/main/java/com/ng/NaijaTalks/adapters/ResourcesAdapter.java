@@ -1,4 +1,4 @@
-package com.ng.NaijaTalks;
+package com.ng.NaijaTalks.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.ng.NaijaTalks.CategoryView;
+import com.ng.NaijaTalks.R;
 
 import java.util.ArrayList;
 import java.util.Random;

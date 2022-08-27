@@ -2,18 +2,16 @@ package com.ng.NaijaTalks;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,6 +20,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.navigation.NavigationView;
+import com.ng.NaijaTalks.adapters.ResourcesAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,14 +30,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
 public class Resources extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView, navigationView_right;
     ImageView back;
+    ProgressBar progressBar;
 
     ListView listView;
     int ArrayLength, ArrayLength2;
@@ -65,6 +63,7 @@ public class Resources extends AppCompatActivity {
         setContentView(R.layout.activity_resources);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        progressBar = findViewById(R.id.progressBar);
         listView = findViewById(R.id.listview);
         drawerLayout = findViewById(R.id.drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
@@ -147,6 +146,7 @@ public class Resources extends AppCompatActivity {
         });
 
 
+        progressBar.setVisibility(View.VISIBLE);
         //get the post in each category
         StringRequest stringRequest2 = new StringRequest(Request.Method.GET, ALL_POSTS,
                 new Response.Listener<String>() {
@@ -154,7 +154,7 @@ public class Resources extends AppCompatActivity {
                     public void onResponse(String response) {
                         System.out.println("Response = "+response);
 
-//                        progressBar.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.GONE);
 //                        loadingText.setVisibility(View.GONE);
 
                         try {
@@ -175,7 +175,7 @@ public class Resources extends AppCompatActivity {
                                     String post_title = tit.getString("rendered");
 
                                     JSONObject tit2 = new JSONObject(content);
-                                    String post_content = tit.getString("rendered");
+                                    String post_content = tit2.getString("rendered");
 
                                     String image_link = section1.getString("featured_media_src_url");
                                     String categories = section1.getString("categories");
@@ -224,7 +224,7 @@ public class Resources extends AppCompatActivity {
                     public void onResponse(String response) {
                         System.out.println("Response = "+response);
 
-//                        progressBar.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.GONE);
 //                        loadingText.setVisibility(View.GONE);
 
                         try {
@@ -246,7 +246,7 @@ public class Resources extends AppCompatActivity {
                                     }
 
                                     listView = findViewById(R.id.listview);
-                                    ResourcesAdapter  myAdapter=new ResourcesAdapter(getApplicationContext(),categories,arr_category_id,arr_post_id,arr_post_date,arr_post_title,arr_post_content,arr_post_image_link,arr_post_category_id);
+                                    ResourcesAdapter myAdapter=new ResourcesAdapter(getApplicationContext(),categories,arr_category_id,arr_post_id,arr_post_date,arr_post_title,arr_post_content,arr_post_image_link,arr_post_category_id);
                                     listView.setAdapter(myAdapter);
 
                                 }
