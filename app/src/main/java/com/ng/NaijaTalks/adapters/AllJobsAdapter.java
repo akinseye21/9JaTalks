@@ -19,6 +19,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.ng.NaijaTalks.EventDetail;
+import com.ng.NaijaTalks.JobViewPage;
 import com.ng.NaijaTalks.R;
 import com.ng.NaijaTalks.ResourcesDetails;
 
@@ -126,6 +127,18 @@ public class AllJobsAdapter extends BaseAdapter {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         requestQueue.add(stringRequest);
+
+        card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(context, JobViewPage.class);
+                in.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                in.putExtra("content", arr_job_content.get(i));
+                in.putExtra("title", arr_job_title.get(i));
+                in.putExtra("link", arr_featured_image.get(i));
+                context.startActivity(in);
+            }
+        });
 
         return convertView;
     }

@@ -126,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if(id == R.id.opportunities){
 //                    Toast.makeText(Dashboard.this, "Privacy Selected", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getApplicationContext(), Opportunities.class);
+                    startActivity(i);
                 }
                 else if(id == R.id.hangout){
 //                    Toast.makeText(Dashboard.this, "Privacy Selected", Toast.LENGTH_SHORT).show();

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ import java.util.Map;
 
 public class Opportunities extends AppCompatActivity {
 
+    ImageView back;
     ListView myList;
     int ArrayLength;
     ProgressBar progressBar;
@@ -49,6 +51,13 @@ public class Opportunities extends AppCompatActivity {
         setContentView(R.layout.activity_opportunities);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
         login = findViewById(R.id.login);
         register = findViewById(R.id.register);
         myList = findViewById(R.id.listview_job);

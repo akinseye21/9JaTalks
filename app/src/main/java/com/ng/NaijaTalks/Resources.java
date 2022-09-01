@@ -32,9 +32,9 @@ import java.util.Map;
 
 public class Resources extends AppCompatActivity {
 
-    DrawerLayout drawerLayout;
-    ActionBarDrawerToggle actionBarDrawerToggle;
-    NavigationView navigationView, navigationView_right;
+//    DrawerLayout drawerLayout;
+//    ActionBarDrawerToggle actionBarDrawerToggle;
+//    NavigationView navigationView, navigationView_right;
     ImageView back;
     ProgressBar progressBar;
 
@@ -65,77 +65,77 @@ public class Resources extends AppCompatActivity {
 
         progressBar = findViewById(R.id.progressBar);
         listView = findViewById(R.id.listview);
-        drawerLayout = findViewById(R.id.drawer_layout);
-        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
-        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
-        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-        actionBarDrawerToggle.syncState();
-        navigationView = findViewById(R.id.navigation);
-        View hView = navigationView.getHeaderView(0);
-        LinearLayout activity = hView.findViewById(R.id.activity);
-        LinearLayout resources = hView.findViewById(R.id.resources);
-        LinearLayout photos = hView.findViewById(R.id.photo);
-        LinearLayout watch = hView.findViewById(R.id.watch);
-        LinearLayout people = hView.findViewById(R.id.people);
-        LinearLayout groups = hView.findViewById(R.id.groups);
-        LinearLayout forum = hView.findViewById(R.id.forums);
-        LinearLayout opportunities = hView.findViewById(R.id.opportunities);
+//        drawerLayout = findViewById(R.id.drawer_layout);
+//        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+//        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
+//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
+//        actionBarDrawerToggle.syncState();
+//        navigationView = findViewById(R.id.navigation);
+//        View hView = navigationView.getHeaderView(0);
+//        LinearLayout activity = hView.findViewById(R.id.activity);
+//        LinearLayout resources = hView.findViewById(R.id.resources);
+//        LinearLayout photos = hView.findViewById(R.id.photo);
+//        LinearLayout watch = hView.findViewById(R.id.watch);
+//        LinearLayout people = hView.findViewById(R.id.people);
+//        LinearLayout groups = hView.findViewById(R.id.groups);
+//        LinearLayout forum = hView.findViewById(R.id.forums);
+//        LinearLayout opportunities = hView.findViewById(R.id.opportunities);
 
-        activity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-                Intent i = new Intent(getApplicationContext(), Dashboard.class);
-                startActivity(i);
-            }
-        });
-        resources.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-                drawerLayout.close();
-            }
-        });
-        photos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-            }
-        });
-        watch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-            }
-        });
-        people.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-                Intent i = new Intent(getApplicationContext(), AllUsers.class);
-                startActivity(i);
-            }
-        });
-        groups.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-                Intent i = new Intent(getApplicationContext(), Groups.class);
-                startActivity(i);
-            }
-        });
-        forum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-            }
-        });
-        opportunities.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-            }
-        });
+//        activity.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //show activity page
+//                Intent i = new Intent(getApplicationContext(), Dashboard.class);
+//                startActivity(i);
+//            }
+//        });
+//        resources.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //show activity page
+//                drawerLayout.close();
+//            }
+//        });
+//        photos.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //show activity page
+//            }
+//        });
+//        watch.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //show activity page
+//            }
+//        });
+//        people.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //show activity page
+//                Intent i = new Intent(getApplicationContext(), AllUsers.class);
+//                startActivity(i);
+//            }
+//        });
+//        groups.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //show activity page
+//                Intent i = new Intent(getApplicationContext(), Groups.class);
+//                startActivity(i);
+//            }
+//        });
+//        forum.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //show activity page
+//            }
+//        });
+//        opportunities.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //show activity page
+//            }
+//        });
 
         back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
