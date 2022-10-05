@@ -4,4 +4,8 @@
     <string name="close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="facebook_app_id">768466440929672</string>
+    <string name="fb_login_protocol_scheme">fb768466440929672</string>
+    <string name="facebook_client_token">45980f608d9b6deb3af42699369d8710</string>
 </resources>

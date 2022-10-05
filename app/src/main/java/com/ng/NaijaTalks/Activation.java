@@ -79,11 +79,11 @@ public class Activation extends AppCompatActivity {
 
                                         if(status.equals("activation successful")){
                                             Intent j = new Intent(getApplicationContext(), Dashboard.class);
-                                            j.putExtra("email", mail);
+                                            j.putExtra("user_email", mail);
                                             j.putExtra("username", username);
 //                                            j.putExtra("key", key);
 //                                            j.putExtra("reg_time", reg_time);
-                                            j.putExtra("fullname", fullname);
+                                            j.putExtra("display_name", fullname);
 //                                            j.putExtra("password", gotPass);
                                             startActivity(j);
                                         }

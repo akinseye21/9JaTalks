@@ -4,6 +4,7 @@ pluginManagement {
         google()
         mavenCentral()
 //        jcenter()
+        maven { url "https://jitpack.io" }
     }
 }
 dependencyResolutionManagement {
@@ -11,9 +12,9 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-//        jcenter()
 
-//        maven { url "https://jitpack.io" }
+        maven { url "https://jitpack.io" }
+//        jcenter()
     }
 }
 rootProject.name = "9JaTalks"

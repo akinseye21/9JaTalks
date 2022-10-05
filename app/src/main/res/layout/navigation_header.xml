@@ -45,8 +45,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+            android:gravity="center"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppinsmedium"
+                android:id="@+id/fullname"
                 android:text="Akinseye Abayomi"
                 android:textColor="#696b6e"
                 android:textSize="10dp" />
@@ -55,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+            android:gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/poppinsmedium"
@@ -82,186 +85,37 @@
                         android:layout_height="match_parent">
 
                     <RelativeLayout
-                            android:id="@+id/rel2"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="80dp">
-
-                        <LinearLayout
-                                android:id="@+id/activity"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentLeft="true"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
-                            <ImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:src="@drawable/activity" />
-
-                            <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppinsregular"
-                                    android:text="Activities"
-                                    android:textColor="@color/black"
-                                    android:textSize="10dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:id="@+id/resources"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
-                            <ImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:src="@drawable/resources" />
-
-                            <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppinsregular"
-                                    android:text="Resources"
-                                    android:textColor="@color/black"
-                                    android:textSize="10dp" />
-                        </LinearLayout>
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                            android:id="@+id/rel3"
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/rel2"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="30dp">
-
-                        <LinearLayout
-                                android:id="@+id/photo"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:layout_marginRight="15dp"
-                                android:padding="10dp">
-
-
-                            <ImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:src="@drawable/photos" />
-
-                            <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppinsregular"
-                                    android:text="Photos"
-                                    android:textColor="@color/black"
-                                    android:textSize="10dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                                android:id="@+id/watch"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentLeft="true"
-                                android:layout_marginRight="15dp"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
-                            <ImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:src="@drawable/watch" />
-
-                            <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppinsregular"
-                                    android:text="Videos"
-                                    android:textColor="@color/black"
-                                    android:textSize="10dp" />
-                        </LinearLayout>
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                            android:layout_width="150dp"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:id="@+id/rel4"
-                            android:layout_below="@id/rel3"
-                            android:layout_marginTop="30dp">
-
-                        <LinearLayout
-                                android:id="@+id/people"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentLeft="true"
-                                android:gravity="center"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
-                            <ImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:src="@drawable/people" />
-
-                            <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppinsregular"
-                                    android:text="People"
-                                    android:textColor="@color/black"
-                                    android:textSize="10dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_marginRight="15dp"
-                                android:gravity="center"
-                                android:id="@+id/groups"
-                                android:orientation="vertical"
-                                android:padding="10dp">
-
-                            <ImageView
-                                    android:layout_width="15dp"
-                                    android:layout_height="15dp"
-                                    android:src="@drawable/groups" />
-
-                            <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppinsregular"
-                                    android:text="Groups"
-                                    android:textColor="@color/black"
-                                    android:textSize="10dp" />
-                        </LinearLayout>
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:id="@+id/rel5"
+                        android:id="@+id/rel2"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/rel4"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="30dp">
+                        android:layout_marginTop="80dp">
+
+                        <!--                        <LinearLayout-->
+                        <!--                            android:id="@+id/activity"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:layout_alignParentLeft="true"-->
+                        <!--                            android:gravity="center"-->
+                        <!--                            android:orientation="vertical"-->
+                        <!--                            android:padding="10dp">-->
+
+                        <!--                            <ImageView-->
+                        <!--                                android:layout_width="15dp"-->
+                        <!--                                android:layout_height="15dp"-->
+                        <!--                                android:src="@drawable/activity" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:fontFamily="@font/poppinsregular"-->
+                        <!--                                android:text="Activities"-->
+                        <!--                                android:textColor="@color/black"-->
+                        <!--                                android:textSize="10dp" />-->
+                        <!--                        </LinearLayout>-->
 
                         <LinearLayout
-                            android:id="@+id/forums"
+                            android:id="@+id/resources"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -272,13 +126,13 @@
                             <ImageView
                                 android:layout_width="15dp"
                                 android:layout_height="15dp"
-                                android:src="@drawable/forum" />
+                                android:src="@drawable/resources" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/poppinsregular"
-                                android:text="Forums"
+                                android:text="Resources"
                                 android:textColor="@color/black"
                                 android:textSize="10dp" />
                         </LinearLayout>
@@ -305,23 +159,198 @@
                                 android:textColor="@color/black"
                                 android:textSize="10dp" />
                         </LinearLayout>
+
+
+
                     </RelativeLayout>
+
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/rel3"-->
+<!--                        android:layout_width="150dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@id/rel2"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_marginTop="30dp">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/photo"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentRight="true"-->
+<!--                            android:layout_marginRight="15dp"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:padding="10dp">-->
+
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="15dp"-->
+<!--                                android:layout_height="15dp"-->
+<!--                                android:src="@drawable/photos" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:fontFamily="@font/poppinsregular"-->
+<!--                                android:text="Photos"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="10dp" />-->
+<!--                        </LinearLayout>-->
+
+<!--                        &lt;!&ndash;                        <LinearLayout&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                android:id="@+id/watch"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                android:layout_alignParentLeft="true"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                android:layout_marginRight="15dp"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                android:gravity="center"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                android:orientation="vertical"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                android:padding="10dp">&ndash;&gt;-->
+
+<!--                        &lt;!&ndash;                            <ImageView&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    android:layout_width="15dp"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    android:layout_height="15dp"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    android:src="@drawable/watch" />&ndash;&gt;-->
+
+<!--                        &lt;!&ndash;                            <TextView&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    android:fontFamily="@font/poppinsregular"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    android:text="Videos"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    android:textColor="@color/black"&ndash;&gt;-->
+<!--                        &lt;!&ndash;                                    android:textSize="10dp" />&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        </LinearLayout>&ndash;&gt;-->
+<!--                    </RelativeLayout>-->
+
+
+                    <RelativeLayout
+                        android:id="@+id/rel4"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rel2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="40dp">
+
+                        <LinearLayout
+                            android:id="@+id/people"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/people" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppinsregular"
+                                android:text="People"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/groups"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="15dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/groups" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppinsregular"
+                                android:text="Groups"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/rel5"-->
+<!--                        android:layout_width="150dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_below="@id/rel4"-->
+<!--                        android:layout_centerHorizontal="true"-->
+<!--                        android:layout_marginTop="30dp">-->
+
+<!--&lt;!&ndash;                        <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:id="@+id/forums"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:layout_alignParentLeft="true"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:orientation="vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                            android:padding="10dp">&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:src="@drawable/forum" />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                            <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:fontFamily="@font/poppinsregular"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:text="Forums"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:textColor="@color/black"&ndash;&gt;-->
+<!--&lt;!&ndash;                                android:textSize="10dp" />&ndash;&gt;-->
+<!--&lt;!&ndash;                        </LinearLayout>&ndash;&gt;-->
+
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/opportunities"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentRight="true"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:padding="10dp">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="15dp"-->
+<!--                                android:layout_height="15dp"-->
+<!--                                android:src="@drawable/opportunity" />-->
+
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:fontFamily="@font/poppinsregular"-->
+<!--                                android:text="Opportunities"-->
+<!--                                android:textColor="@color/black"-->
+<!--                                android:textSize="10dp" />-->
+<!--                        </LinearLayout>-->
+<!--                    </RelativeLayout>-->
 
                     <RelativeLayout
                         android:id="@+id/rel6"
-                        android:layout_below="@+id/rel5"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
+                        android:layout_below="@+id/rel4"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="40dp"
                         android:layout_marginBottom="100dp">
 
 
                         <LinearLayout
+                            android:id="@+id/events"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
-                            android:id="@+id/events"
                             android:gravity="center"
                             android:orientation="vertical"
                             android:padding="10dp">
@@ -340,6 +369,35 @@
                                 android:textColor="@color/black"
                                 android:textSize="10dp" />
                         </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/expert_hangout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="15dp"
+                                android:src="@drawable/hangout"
+                                app:tint="@color/grey" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppinsregular"
+                                android:gravity="center"
+                                android:text="Expert\nHangout"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+
+
                     </RelativeLayout>
 
                 </RelativeLayout>

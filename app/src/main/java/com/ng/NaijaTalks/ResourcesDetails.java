@@ -37,6 +37,11 @@ public class ResourcesDetails extends AppCompatActivity {
     TextView downloadDocument;
     ProgressBar progressBar;
     RelativeLayout rel;
+    TextView login, register;
+    String email;
+
+    ImageView facebook, twitter, gmail, instagram;
+
 
     String api_key = "AIzaSyAZqaGcGeIOsSiFuzKxVQbmSg_4i0h4IQs";
 
@@ -52,6 +57,7 @@ public class ResourcesDetails extends AppCompatActivity {
         image = i.getStringExtra("image");
         date = i.getStringExtra("date");
         content = i.getStringExtra("content");
+        email = i.getStringExtra("email");
         category_id = i.getIntExtra("category_id", 0);
 
         rel = findViewById(R.id.rel);
@@ -63,6 +69,12 @@ public class ResourcesDetails extends AppCompatActivity {
         back = findViewById(R.id.back);
         imageView = findViewById(R.id.image);
         downloadDocument = findViewById(R.id.downloadDocument);
+        login = findViewById(R.id.login);
+        register = findViewById(R.id.register);
+        facebook = findViewById(R.id.facebook);
+        twitter = findViewById(R.id.twitter);
+        gmail = findViewById(R.id.gmail);
+        instagram = findViewById(R.id.instagram);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,13 +84,21 @@ public class ResourcesDetails extends AppCompatActivity {
             }
         });
 
+        if(email.isEmpty()){
+            login.setVisibility(View.VISIBLE);
+            register.setVisibility(View.VISIBLE);
+        }else{
+            login.setVisibility(View.GONE);
+            register.setVisibility(View.GONE);
+        }
+
         List<String> list = new ArrayList<>();
         String regex = "\\b((?:https?|ftp|file):" + "//[-a-zA-Z0-9+&@#/%?="
                 + "~_|!:, .;]*[-a-zA-Z0-9+" + "&@#/%=~_|])";
         Pattern p = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         Matcher m = p.matcher(content);
 
-        if (category_id == 97){
+        if (category_id == 97 || category_id == 113 || category_id == 100){
             imageView.setVisibility(View.GONE);
             downloadDocument.setVisibility(View.GONE);
 //            videoView.setVisibility(View.VISIBLE);
@@ -120,6 +140,56 @@ public class ResourcesDetails extends AppCompatActivity {
                 webView.getSettings().setDomStorageEnabled(true);
                 webView.loadUrl(url);
 
+                facebook.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+                        emailIntent.setType("text/plain");
+                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "9jaTalks");
+                        emailIntent.putExtra(Intent.EXTRA_TEXT, "Watch \""+title+"\" on 9jaTalks\n"+url);
+                        emailIntent.setPackage("com.facebook.katana");
+                        startActivity(Intent.createChooser(emailIntent, "Share"));
+                    }
+                });
+
+                twitter.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent emailIntent = new Intent(Intent.ACTION_SEND, Uri.parse("https://9jatalks.org"));
+                        emailIntent.setType("text/plain");
+                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "9jaTalks");
+                        emailIntent.putExtra(Intent.EXTRA_TEXT, "Watch \""+title+"\" on 9jaTalks\n"+url);
+                        emailIntent.setPackage("com.twitter.android");
+                        startActivity(Intent.createChooser(emailIntent, "Share"));
+                    }
+                });
+
+                gmail.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent emailIntent = new Intent(Intent.ACTION_SEND, Uri.parse("https://9jatalks.org"));
+                        emailIntent.setType("text/plain");
+//                        emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] {"jan@example.com"}); // recipients
+                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "9jaTalks");
+                        emailIntent.putExtra(Intent.EXTRA_TEXT, "Watch \""+title+"\" on 9jaTalks\n"+url);
+                        emailIntent.setPackage("com.google.android.gm");
+                        startActivity(Intent.createChooser(emailIntent, "Send mail"));
+                    }
+                });
+
+                instagram.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Uri file = Uri.parse("android.resource://com.ng.NaijaTalks/"+R.drawable.logo2);
+                        Intent shareIntent = new Intent(android.content.Intent.ACTION_SEND);
+                        shareIntent.setType("image/*");
+                        shareIntent.putExtra(Intent.EXTRA_STREAM,file);
+                        shareIntent.putExtra(Intent.EXTRA_TITLE, "Watch \""+title+"\" on 9jaTalks\n"+url);
+                        shareIntent.setPackage("com.instagram.android");
+                        startActivity(shareIntent);
+                    }
+                });
+
 //                Uri uri = Uri.parse(url);
 //                //set videoview to load url
 //                videoView.setVideoURI(uri); //the string of the URL mentioned above
@@ -157,6 +227,10 @@ public class ResourcesDetails extends AppCompatActivity {
                         startActivity(i);
                     }
                 });
+
+
+
+
             }
         }
 

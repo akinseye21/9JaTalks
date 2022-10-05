@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,6 +39,9 @@ public class Resources extends AppCompatActivity {
     ImageView back;
     ProgressBar progressBar;
 
+    TextView login, register;
+    String email;
+
     ListView listView;
     int ArrayLength, ArrayLength2;
 
@@ -63,79 +67,22 @@ public class Resources extends AppCompatActivity {
         setContentView(R.layout.activity_resources);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        Intent i = getIntent();
+        email = i.getStringExtra("email");
+
+
         progressBar = findViewById(R.id.progressBar);
         listView = findViewById(R.id.listview);
-//        drawerLayout = findViewById(R.id.drawer_layout);
-//        actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
-//        actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
-//        drawerLayout.addDrawerListener(actionBarDrawerToggle);
-//        actionBarDrawerToggle.syncState();
-//        navigationView = findViewById(R.id.navigation);
-//        View hView = navigationView.getHeaderView(0);
-//        LinearLayout activity = hView.findViewById(R.id.activity);
-//        LinearLayout resources = hView.findViewById(R.id.resources);
-//        LinearLayout photos = hView.findViewById(R.id.photo);
-//        LinearLayout watch = hView.findViewById(R.id.watch);
-//        LinearLayout people = hView.findViewById(R.id.people);
-//        LinearLayout groups = hView.findViewById(R.id.groups);
-//        LinearLayout forum = hView.findViewById(R.id.forums);
-//        LinearLayout opportunities = hView.findViewById(R.id.opportunities);
+        login = findViewById(R.id.login);
+        register = findViewById(R.id.register);
 
-//        activity.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //show activity page
-//                Intent i = new Intent(getApplicationContext(), Dashboard.class);
-//                startActivity(i);
-//            }
-//        });
-//        resources.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //show activity page
-//                drawerLayout.close();
-//            }
-//        });
-//        photos.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //show activity page
-//            }
-//        });
-//        watch.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //show activity page
-//            }
-//        });
-//        people.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //show activity page
-//                Intent i = new Intent(getApplicationContext(), AllUsers.class);
-//                startActivity(i);
-//            }
-//        });
-//        groups.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //show activity page
-//                Intent i = new Intent(getApplicationContext(), Groups.class);
-//                startActivity(i);
-//            }
-//        });
-//        forum.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //show activity page
-//            }
-//        });
-//        opportunities.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //show activity page
-//            }
-//        });
+        if(!email.isEmpty()){
+            login.setVisibility(View.GONE);
+            register.setVisibility(View.GONE);
+        }else{
+            login.setVisibility(View.VISIBLE);
+            register.setVisibility(View.VISIBLE);
+        }
 
         back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -246,7 +193,7 @@ public class Resources extends AppCompatActivity {
                                     }
 
                                     listView = findViewById(R.id.listview);
-                                    ResourcesAdapter myAdapter=new ResourcesAdapter(getApplicationContext(),categories,arr_category_id,arr_post_id,arr_post_date,arr_post_title,arr_post_content,arr_post_image_link,arr_post_category_id);
+                                    ResourcesAdapter myAdapter=new ResourcesAdapter(getApplicationContext(),categories,arr_category_id,arr_post_id,arr_post_date,arr_post_title,arr_post_content,arr_post_image_link,arr_post_category_id, email);
                                     listView.setAdapter(myAdapter);
 
                                 }

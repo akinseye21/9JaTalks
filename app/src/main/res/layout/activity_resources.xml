@@ -43,17 +43,17 @@
                     android:textSize="10dp" />
 
             <TextView
-                    android:id="@+id/login"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_toLeftOf="@+id/register"
-                    android:fontFamily="@font/poppinslight"
-                    android:text="Login"
-                    android:textColor="@color/black"
-                    android:textSize="10dp" />
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/register"
+                android:fontFamily="@font/poppinslight"
+                android:text="Login"
+                android:textColor="@color/black"
+                android:textSize="10dp" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="20dp"
@@ -93,12 +93,12 @@
                 android:id="@+id/progressBar"/>
 
             <ListView
+                android:id="@+id/listview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:dividerHeight="0.1dp"
-                android:divider="@color/black"
                 android:layout_below="@+id/mycat"
-                android:id="@+id/listview"/>
+                android:divider="@null"
+                android:dividerHeight="0dp" />
 
         </RelativeLayout>
 

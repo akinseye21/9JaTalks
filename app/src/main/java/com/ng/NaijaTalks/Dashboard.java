@@ -1,7 +1,12 @@
 package com.ng.NaijaTalks;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -10,14 +15,18 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -38,7 +47,7 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
-    String email;
+    String email, fullname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +55,11 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
         setContentView(R.layout.activity_dashboard);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        ActivityCompat.requestPermissions(this, new String[]{READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
+
         Intent i = getIntent();
         email = i.getStringExtra("user_email");
+        fullname = i.getStringExtra("display_name");
 
         user = findViewById(R.id.user);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -59,60 +71,63 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
         View hView = navigationView.getHeaderView(0);
 
         LinearLayout profile = hView.findViewById(R.id.profile);
-        LinearLayout activity = hView.findViewById(R.id.activity);
+//        LinearLayout activity = hView.findViewById(R.id.activity);
         LinearLayout resources = hView.findViewById(R.id.resources);
-        LinearLayout photos = hView.findViewById(R.id.photo);
-        LinearLayout watch = hView.findViewById(R.id.watch);
+//        LinearLayout photos = hView.findViewById(R.id.photo);
+//        LinearLayout watch = hView.findViewById(R.id.watch);
         LinearLayout people = hView.findViewById(R.id.people);
         LinearLayout groups = hView.findViewById(R.id.groups);
-        LinearLayout forum = hView.findViewById(R.id.forums);
+//        LinearLayout forum = hView.findViewById(R.id.forums);
         LinearLayout opportunities = hView.findViewById(R.id.opportunities);
         LinearLayout events = hView.findViewById(R.id.events);
+        LinearLayout expertHangout = hView.findViewById(R.id.expert_hangout);
+        TextView fullNam = hView.findViewById(R.id.fullname);
+        fullNam.setText(fullname);
 
         navigationView_right = findViewById(R.id.navigation_right);
+        navigationView_right.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+
+                if(itemId == R.id.logout){
+                    SharedPreferences myPrefs = getSharedPreferences("checkbox",
+                            MODE_PRIVATE);
+                    SharedPreferences.Editor editor = myPrefs.edit();
+                    editor.clear();
+                    editor.commit();
+                    //move out of activity
+                    Intent i = new Intent(Dashboard.this, MainActivity.class);
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(i);
+                }
+                return false;
+            }
+        });
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //show activity page
-                Intent i = new Intent(getApplicationContext(), UserProfile.class);
-                i.putExtra("email", email);
-                startActivity(i);
-            }
-        });
-        activity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-                drawerLayout.close();
+//                Intent i = new Intent(getApplicationContext(), UserProfile.class);
+//                i.putExtra("email", email);
+//                startActivity(i);
             }
         });
         resources.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //show activity page
-                Intent i = new Intent(getApplicationContext(), Resources.class);
+                Intent i = new Intent(Dashboard.this, Resources.class);
                 i.putExtra("email", email);
                 startActivity(i);
-            }
-        });
-        photos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
-            }
-        });
-        watch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
             }
         });
         people.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //show activity page
-                Intent i = new Intent(getApplicationContext(), AllUsers.class);
+                Intent i = new Intent(Dashboard.this, AllUsers.class);
                 i.putExtra("email", email);
                 startActivity(i);
             }
@@ -121,22 +136,16 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
             @Override
             public void onClick(View v) {
                 //show activity page
-                Intent i = new Intent(getApplicationContext(), Groups.class);
+                Intent i = new Intent(Dashboard.this, Groups.class);
                 i.putExtra("email", email);
                 startActivity(i);
-            }
-        });
-        forum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //show activity page
             }
         });
         opportunities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //show activity page
-                Intent i = new Intent(getApplicationContext(), Opportunities.class);
+                Intent i = new Intent(Dashboard.this, Opportunities.class);
                 i.putExtra("email", email);
                 startActivity(i);
             }
@@ -144,7 +153,15 @@ public class Dashboard extends AppCompatActivity implements AllMembersFeed.OnFra
         events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), Events.class);
+                Intent i = new Intent(Dashboard.this, Events.class);
+                i.putExtra("email", email);
+                startActivity(i);
+            }
+        });
+        expertHangout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Dashboard.this, ExpertHangout.class);
                 i.putExtra("email", email);
                 startActivity(i);
             }

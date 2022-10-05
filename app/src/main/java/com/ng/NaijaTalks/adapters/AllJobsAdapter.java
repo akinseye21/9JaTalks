@@ -42,13 +42,14 @@ public class AllJobsAdapter extends BaseAdapter {
     ArrayList<String> arr_company_name;
     ArrayList<String> arr_company_website;
     ArrayList<Integer> arr_featured_image;
+    String email;
     LayoutInflater inflter;
 
     int ArrayLength;
 
     public static final String MEDIA = "https://9jatalks.org/wp-json/wp/v2/media";
 
-    public AllJobsAdapter(Context applicationContext, ArrayList<String> arr_job_title, ArrayList<String> arr_job_content, ArrayList<String> arr_job_location, ArrayList<String> arr_application_link, ArrayList<String> arr_company_name, ArrayList<String> arr_company_website, ArrayList<Integer> arr_featured_image) {
+    public AllJobsAdapter(Context applicationContext, ArrayList<String> arr_job_title, ArrayList<String> arr_job_content, ArrayList<String> arr_job_location, ArrayList<String> arr_application_link, ArrayList<String> arr_company_name, ArrayList<String> arr_company_website, ArrayList<Integer> arr_featured_image, String email) {
         this.context = applicationContext;
 //        this.image = image;
         this.arr_job_title = arr_job_title;
@@ -58,6 +59,7 @@ public class AllJobsAdapter extends BaseAdapter {
         this.arr_company_name = arr_company_name;
         this.arr_company_website = arr_company_website;
         this.arr_featured_image = arr_featured_image;
+        this.email = email;
         inflter = (LayoutInflater.from(applicationContext));
     }
 
@@ -136,6 +138,7 @@ public class AllJobsAdapter extends BaseAdapter {
                 in.putExtra("content", arr_job_content.get(i));
                 in.putExtra("title", arr_job_title.get(i));
                 in.putExtra("link", arr_featured_image.get(i));
+                in.putExtra("email", email);
                 context.startActivity(in);
             }
         });

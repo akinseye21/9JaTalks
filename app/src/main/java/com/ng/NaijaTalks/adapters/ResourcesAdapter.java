@@ -1,22 +1,47 @@
 package com.ng.NaijaTalks.adapters;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.ng.NaijaTalks.CategoryView;
+import com.ng.NaijaTalks.Dashboard;
+import com.ng.NaijaTalks.MainActivity;
 import com.ng.NaijaTalks.R;
+import com.ng.NaijaTalks.Register;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -35,11 +60,13 @@ public class ResourcesAdapter extends BaseAdapter {
     ArrayList<String> arr_post_content;
     ArrayList<String> arr_post_image_link;
     ArrayList<Integer> arr_post_category_id;
+    String email;
     LayoutInflater inflter;
+    Dialog myDialog;
 
     public ResourcesAdapter(Context applicationContext, ArrayList<String> categories, ArrayList<Integer> arr_category_id,
                             ArrayList<Integer> arr_post_id, ArrayList<String> arr_post_date, ArrayList<String> arr_post_title, ArrayList<String> arr_post_content,
-                            ArrayList<String> arr_post_image_link, ArrayList<Integer> arr_post_category_id) {
+                            ArrayList<String> arr_post_image_link, ArrayList<Integer> arr_post_category_id, String email) {
         this.context = applicationContext;
         this.categories = categories;
         this.arr_category_id = arr_category_id;
@@ -49,6 +76,7 @@ public class ResourcesAdapter extends BaseAdapter {
         this.arr_post_content = arr_post_content;
         this.arr_post_image_link = arr_post_image_link;
         this.arr_post_category_id = arr_post_category_id;
+        this.email = email;
         inflter = (LayoutInflater.from(applicationContext));
     }
 
@@ -94,7 +122,8 @@ public class ResourcesAdapter extends BaseAdapter {
 
         Random myRand = new Random();
         int randNum1 = myRand.nextInt(rand_color.length);
-        btn_title.setBackgroundResource(rand_color[randNum1]);
+//        btn_title.setBackgroundResource(rand_color[randNum1]);
+//        btn_title.setBackgroundResource(rand_color[randNum1]);
         categoryName.setText(categories.get(position));
         show.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,27 +140,17 @@ public class ResourcesAdapter extends BaseAdapter {
                 intent.putIntegerArrayListExtra("post_category_id", arr_post_category_id);
                 intent.putExtra("clicked_category_id", categories.get(position));
                 intent.putExtra("clicked_id", arr_category_id.get(position));
-//                intent.putExtra("startDate", startDate);
-//                intent.putExtra("startTimeHour", startTimeHour);
-//                intent.putExtra("startTimeMinutes", startTimeMinutes);
-//                intent.putExtra("endDate", endDate);
-//                intent.putExtra("endTimeHour", endTimeHour);
-//                intent.putExtra("endTimeMinutes", endTimeMinutes);
-//                intent.putExtra("startTimeAmPm", startTimeAmPm);
-//                intent.putExtra("endTimeAmPm", endTimeAmPm);
-//                intent.putExtra("eventTitle", title.get(position));
+                intent.putExtra("email", email);
                 context.startActivity(intent);
             }
         });
-
-
-
-
-
-
-
         return convertView;
 
+    }
+
+    public ResourcesAdapter(Context context) {
+        super();
+        this.context = context;
     }
 
 }

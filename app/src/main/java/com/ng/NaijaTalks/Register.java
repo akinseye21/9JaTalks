@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -22,8 +23,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.PasswordAuthentication;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.mail.MessagingException;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.Message;
+import javax.mail.Session;
+
+import java.util.Properties;
+
+
 
 public class Register extends AppCompatActivity {
 
@@ -85,6 +98,8 @@ public class Register extends AppCompatActivity {
                                             String fullname = section1.getString("fullname");
 
                                             if(status.equals("successful")){
+
+
                                                 Intent j = new Intent(getApplicationContext(), Activation.class);
                                                 j.putExtra("email", mail);
                                                 j.putExtra("username", gotName);
@@ -93,6 +108,9 @@ public class Register extends AppCompatActivity {
                                                 j.putExtra("fullname", fullname);
                                                 j.putExtra("password", gotPass);
                                                 startActivity(j);
+                                                
+                                            }else{
+                                                Toast.makeText(Register.this, "User already exist", Toast.LENGTH_SHORT).show();
                                             }
 
                                         }

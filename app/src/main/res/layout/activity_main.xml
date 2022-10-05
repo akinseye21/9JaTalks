@@ -11,13 +11,12 @@
     <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#000000ff"
+            android:background="@drawable/new_bg"
             android:orientation="vertical">
 
         <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/color1"
                 android:padding="20dp">
             <ImageView
                     android:layout_width="80dp"
@@ -27,234 +26,520 @@
                     android:src="@drawable/logo"/>
 
             <ImageView
-                    android:id="@+id/menu"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/menu" />
-
-            <TextView
-                    android:id="@+id/register"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:onClick="Register"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_toLeftOf="@+id/menu"
-                    android:fontFamily="@font/poppinslight"
-                    android:text="Register"
-                    android:textColor="#ffffff"
-                    android:textSize="10dp" />
-
-            <TextView
-                    android:id="@+id/login"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_toLeftOf="@+id/register"
-                    android:fontFamily="@font/poppinslight"
-                    android:onClick="login"
-                    android:text="Login"
-                    android:textColor="#ffffff"
-                    android:textSize="10dp" />
-
-            <ImageView
-                android:id="@+id/cart"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:id="@+id/menu"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_toLeftOf="@+id/login"
-                android:src="@drawable/travel" />
+                android:src="@drawable/menu" />
         </RelativeLayout>
-        <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
-                <androidx.viewpager.widget.ViewPager
-                        android:layout_width="match_parent"
-                        android:layout_height="350dp"
-                        android:id="@+id/slideViewPager"></androidx.viewpager.widget.ViewPager>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/white_icon"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="9ja's Largest"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppinsmedium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Democracy"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppinsmedium"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Community"
+                    android:gravity="center"
+                    android:textColor="#ffffff"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/poppinsmedium"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/poppinsregular"
+                    android:padding="10dp"
+                    android:text="9JaTalks empowers every citizen to have a voice in Naija\'s democratic process. Your voice and opinion matter; join other like-minded people to give voice to issues around you."/>
+
 
                 <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:background="@color/color1"
-                        android:gravity="center_horizontal">
-
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/lin_groups"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/holder">
                     <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="20dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentLeft="true"
-                            android:src="@drawable/logo"/>
-
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Nigeria's Largest Democracy\nCommunity"
-                            android:textColor="#ffffff"
-                            android:textSize="20dp"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
-                            android:fontFamily="@font/poppinsmedium" />
-                    <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="9JaTalks empowers every citizen to have a voice in Naija\'s \ndemocratic process. Your voice and opinion matter; join other\nlike-minded people to give voice to issues around you."
-                            android:textColor="@color/color2"
-                            android:textSize="10dp"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="10dp"
-                            android:fontFamily="@font/poppinsregular" />
-                    <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:orientation="horizontal"
-                            android:background="@drawable/new_login"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_gravity="center"
-                            android:gravity="center">
-                        <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="20dp"
-                                android:src="@drawable/user_icon"/>
-
-                        <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="20dp"
-                                android:layout_marginLeft="15dp"
-                                android:hint="Email or username"
-                                android:textColorHint="@color/color2"
-                                android:textColor="#5e000000"
-                                android:fontFamily="@font/poppinsmedium"
-                                android:inputType="textEmailAddress"
-                                android:textSize="10dp"
-                                android:id="@+id/edtemail"
-                                android:singleLine="true"
-                                android:background="@android:color/transparent"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:orientation="horizontal"
-                            android:background="@drawable/new_login"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginRight="20dp"
-                            android:layout_gravity="center"
-                            android:gravity="center">
-                        <ImageView
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="20dp"
-                                android:src="@drawable/key"/>
-
-                        <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginRight="20dp"
-                                android:layout_marginLeft="15dp"
-                                android:hint="Password"
-                                android:textColorHint="@color/color2"
-                                android:textColor="#5e000000"
-                                android:fontFamily="@font/poppinsmedium"
-                                android:inputType="textPassword"
-                                android:textSize="10dp"
-                                android:id="@+id/edtpassword"
-                                android:singleLine="true"
-                                android:background="@android:color/transparent"/>
-
-
-                    </LinearLayout>
-
-                    <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="20dp">
-                        <CheckBox
-                                android:id="@+id/remember"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Remember Me"
-                                android:textSize="10dp"
-                                android:layout_alignParentLeft="true"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/poppinsregular"/>
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Lost Password?"
-                                android:layout_alignParentRight="true"
-                                android:textSize="10dp"
-                                android:layout_centerVertical="true"
-                                android:textColor="@color/white"
-                                android:fontFamily="@font/poppinsregular"/>
-                    </RelativeLayout>
-
-                    <ProgressBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/progressBar"
-                        android:visibility="gone"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/groups"
+                        android:layout_gravity="center"
+                        app:tint="#ffffff" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Loading..."
-                        android:textColor="#ffffff"
+                        android:text="Groups"
+                        android:textColor="#fff"
                         android:textStyle="bold"
-                        android:textSize="10dp"
-                        android:id="@+id/progressText"
-                        android:visibility="gone"/>
+                        android:textSize="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppinsmedium"/>
+                </LinearLayout>
 
-                    <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:background="@drawable/green_login"
-                            android:layout_marginRight="20dp"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="10dp"
-                            android:text="Log into your account"
-                            android:textAllCaps="false"
-                            android:textSize="10dp"
-                            android:textColor="@color/white"
-                            android:onClick="login_dashboard"
-                            android:fontFamily="@font/poppinsmedium"/>
-
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/lin_experthangout"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/holder">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/hangout"
+                        android:layout_gravity="center"
+                        app:tint="#ffffff" />
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Expert Hangout"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppinsmedium"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/lin_opportunity"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/holder">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/opportunity"
+                        android:layout_gravity="center"
+                        app:tint="#ffffff" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Opportunities"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppinsmedium"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/lin_resources"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/holder">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/resources"
+                        android:layout_gravity="center"
+                        app:tint="#ffffff" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Resources"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppinsmedium"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/lin_events"
+                    android:layout_margin="20dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/holder">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_margin="10dp"
+                        android:src="@drawable/calendar"
+                        android:layout_gravity="center"
+                        app:tint="#ffffff" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Events"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:paddingLeft="20dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/poppinsmedium"/>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/social_rel"
+                    android:visibility="gone"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:id="@+id/facebook_logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/facebook_blue"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/facebook" />
+
+                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:onClick="Register"
-                            android:text="Create an account"
-                            android:textSize="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="40dp"
-                            android:textColor="@color/white"
-                            android:fontFamily="@font/poppinsmedium"/>
+                            android:paddingLeft="10dp"
+                            android:text="Logout"
+                            android:textColor="#ffffff" />
+                    </LinearLayout>
 
+
+                    <TextView
+                        android:id="@+id/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/imageview"
+                        android:text="Username"
+                        android:paddingRight="10dp"
+                        android:textColor="#fff" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imageview"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_margin="20dp">
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:id="@+id/facebook"
+                        android:src="@drawable/facebook"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:id="@+id/instagram"
+                        android:src="@drawable/instagram"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:id="@+id/linkedin"
+                        android:src="@drawable/linkedin"/>
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="10dp"
+                        android:id="@+id/twitter"
+                        android:src="@drawable/twitter"/>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="About Us"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:id="@+id/about"
+                        android:padding="10dp"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/poppinslight"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Terms of Service"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:id="@+id/tos"
+                        android:padding="10dp"
+                        android:layout_alignParentRight="true"
+                        android:fontFamily="@font/poppinslight"/>
+                </LinearLayout>
+
 
             </LinearLayout>
         </ScrollView>
+
+<!--        <ScrollView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--            <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                <androidx.viewpager.widget.ViewPager-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="350dp"-->
+<!--                        android:id="@+id/slideViewPager"></androidx.viewpager.widget.ViewPager>-->
+
+<!--                <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:background="@color/color1"-->
+<!--                        android:gravity="center_horizontal">-->
+
+<!--                    <ImageView-->
+<!--                            android:layout_width="80dp"-->
+<!--                            android:layout_height="20dp"-->
+<!--                            android:layout_marginTop="20dp"-->
+<!--                            android:layout_centerVertical="true"-->
+<!--                            android:layout_alignParentLeft="true"-->
+<!--                            android:src="@drawable/logo"/>-->
+
+<!--                    <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center"-->
+<!--                            android:text="Nigeria's Largest Democracy\nCommunity"-->
+<!--                            android:textColor="#ffffff"-->
+<!--                            android:textSize="20dp"-->
+<!--                            android:paddingTop="10dp"-->
+<!--                            android:paddingBottom="10dp"-->
+<!--                            android:fontFamily="@font/poppinsmedium" />-->
+<!--                    <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center"-->
+<!--                            android:text="9JaTalks empowers every citizen to have a voice in Naija\'s \ndemocratic process. Your voice and opinion matter; join other\nlike-minded people to give voice to issues around you."-->
+<!--                            android:textColor="@color/color2"-->
+<!--                            android:textSize="10dp"-->
+<!--                            android:paddingTop="10dp"-->
+<!--                            android:paddingBottom="10dp"-->
+<!--                            android:fontFamily="@font/poppinsregular" />-->
+<!--                    <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:background="@drawable/new_login"-->
+<!--                            android:layout_marginTop="20dp"-->
+<!--                            android:layout_marginLeft="20dp"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:gravity="center">-->
+<!--                        <ImageView-->
+<!--                                android:layout_width="20dp"-->
+<!--                                android:layout_height="20dp"-->
+<!--                                android:layout_marginLeft="20dp"-->
+<!--                                android:src="@drawable/user_icon"/>-->
+
+<!--                        <EditText-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginRight="20dp"-->
+<!--                                android:layout_marginLeft="15dp"-->
+<!--                                android:hint="Email or username"-->
+<!--                                android:textColorHint="@color/color2"-->
+<!--                                android:textColor="#5e000000"-->
+<!--                                android:fontFamily="@font/poppinsmedium"-->
+<!--                                android:inputType="textEmailAddress"-->
+<!--                                android:textSize="10dp"-->
+<!--                                android:id="@+id/edtemail"-->
+<!--                                android:singleLine="true"-->
+<!--                                android:background="@android:color/transparent"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="50dp"-->
+<!--                            android:orientation="horizontal"-->
+<!--                            android:background="@drawable/new_login"-->
+<!--                            android:layout_marginTop="20dp"-->
+<!--                            android:layout_marginLeft="20dp"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:gravity="center">-->
+<!--                        <ImageView-->
+<!--                                android:layout_width="20dp"-->
+<!--                                android:layout_height="20dp"-->
+<!--                                android:layout_marginLeft="20dp"-->
+<!--                                android:src="@drawable/key"/>-->
+
+<!--                        <EditText-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:layout_marginRight="20dp"-->
+<!--                                android:layout_marginLeft="15dp"-->
+<!--                                android:hint="Password"-->
+<!--                                android:textColorHint="@color/color2"-->
+<!--                                android:textColor="#5e000000"-->
+<!--                                android:fontFamily="@font/poppinsmedium"-->
+<!--                                android:inputType="textPassword"-->
+<!--                                android:textSize="10dp"-->
+<!--                                android:id="@+id/edtpassword"-->
+<!--                                android:singleLine="true"-->
+<!--                                android:background="@android:color/transparent"/>-->
+
+
+<!--                    </LinearLayout>-->
+
+<!--                    <RelativeLayout-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginLeft="20dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:layout_marginRight="20dp">-->
+
+<!--                        <CheckBox-->
+<!--                            android:id="@+id/remember"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentLeft="true"-->
+<!--                            android:layout_centerVertical="true"-->
+<!--                            android:fontFamily="@font/poppinsregular"-->
+<!--                            android:text="Remember Me"-->
+<!--                            android:textSize="10dp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_alignParentRight="true"-->
+<!--                            android:layout_centerVertical="true"-->
+<!--                            android:visibility="gone"-->
+<!--                            android:fontFamily="@font/poppinsregular"-->
+<!--                            android:text="Lost Password?"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:textSize="10dp" />-->
+<!--                    </RelativeLayout>-->
+
+<!--                    <ProgressBar-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:id="@+id/progressBar"-->
+<!--                        android:visibility="gone"/>-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Loading..."-->
+<!--                        android:textColor="#ffffff"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:textSize="10dp"-->
+<!--                        android:id="@+id/progressText"-->
+<!--                        android:visibility="gone"/>-->
+
+<!--                    <Button-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:background="@drawable/green_login"-->
+<!--                            android:layout_marginRight="20dp"-->
+<!--                            android:layout_marginLeft="20dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:text="Log into your account"-->
+<!--                            android:textAllCaps="false"-->
+<!--                            android:textSize="10dp"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:onClick="login_dashboard"-->
+<!--                            android:fontFamily="@font/poppinsmedium"-->
+<!--                        tools:ignore="OnClick" />-->
+
+<!--                    <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:onClick="Register"-->
+<!--                            android:text="Create an account"-->
+<!--                            android:textSize="10dp"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:layout_marginBottom="40dp"-->
+<!--                            android:textColor="@color/white"-->
+<!--                            android:fontFamily="@font/poppinsmedium"-->
+<!--                        tools:ignore="OnClick" />-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+<!--        </ScrollView>-->
 
     </LinearLayout>
 

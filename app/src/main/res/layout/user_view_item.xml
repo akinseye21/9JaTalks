@@ -28,6 +28,8 @@
             android:textColor="@color/black"
             android:id="@+id/uname"
             android:textSize="12dp"
+            android:layout_gravity="center"
+            android:gravity="center"
             android:fontFamily="@font/poppinsmedium"
             android:paddingTop="5dp"/>
 

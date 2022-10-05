@@ -2,6 +2,7 @@ package com.ng.NaijaTalks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -34,6 +35,7 @@ public class Opportunities extends AppCompatActivity {
     int ArrayLength;
     ProgressBar progressBar;
     TextView login, register;
+    String email;
 
     ArrayList<String> arr_job_title = new ArrayList<>();
     ArrayList<String> arr_job_content = new ArrayList<>();
@@ -51,6 +53,9 @@ public class Opportunities extends AppCompatActivity {
         setContentView(R.layout.activity_opportunities);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        Intent i = getIntent();
+        email = i.getStringExtra("email");
+
         back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +68,15 @@ public class Opportunities extends AppCompatActivity {
         myList = findViewById(R.id.listview_job);
         progressBar = findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
+
+
+        if (email.isEmpty()){
+            login.setVisibility(View.VISIBLE);
+            register.setVisibility(View.VISIBLE);
+        }else if(!email.isEmpty()){
+            login.setVisibility(View.GONE);
+            register.setVisibility(View.GONE);
+        }
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, JOBS,
                 new Response.Listener<String>() {
@@ -106,7 +120,7 @@ public class Opportunities extends AppCompatActivity {
                                     arr_company_website.add(company_website);
                                     arr_featured_image.add(featured_media);
 
-                                    AllJobsAdapter myAdapter=new AllJobsAdapter(getApplicationContext(),arr_job_title,arr_job_content,arr_job_location,arr_application_link,arr_company_name,arr_company_website,arr_featured_image);
+                                    AllJobsAdapter myAdapter=new AllJobsAdapter(getApplicationContext(),arr_job_title,arr_job_content,arr_job_location,arr_application_link,arr_company_name,arr_company_website,arr_featured_image, email);
                                     myList.setAdapter(myAdapter);
                                 }
                             }

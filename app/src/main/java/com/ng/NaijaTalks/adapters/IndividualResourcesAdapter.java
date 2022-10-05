@@ -33,15 +33,17 @@ public class IndividualResourcesAdapter extends BaseAdapter {
     ArrayList<String> image;
     ArrayList<String> content;
     ArrayList<Integer> category_id;
+    String email;
     LayoutInflater inflter;
 
-    public IndividualResourcesAdapter(Context applicationContext, ArrayList<String> date, ArrayList<String> title, ArrayList<String> image, ArrayList<String> content, ArrayList<Integer> category_id) {
+    public IndividualResourcesAdapter(Context applicationContext, ArrayList<String> date, ArrayList<String> title, ArrayList<String> image, ArrayList<String> content, ArrayList<Integer> category_id, String email) {
         this.context = applicationContext;
         this.date = date;
         this.title = title;
         this.image = image;
         this.content = content;
         this.category_id = category_id;
+        this.email = email;
         inflter = (LayoutInflater.from(applicationContext));
     }
 
@@ -83,6 +85,7 @@ public class IndividualResourcesAdapter extends BaseAdapter {
                 intent.putExtra("date", date.get(position));
                 intent.putExtra("image", image.get(position));
                 intent.putExtra("content", content.get(position));
+                intent.putExtra("email", email);
                 intent.putExtra("category_id", category_id.get(position));
                 context.startActivity(intent);
 

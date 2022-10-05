@@ -4,35 +4,40 @@
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
-        android:layout_gravity="center"
-        android:gravity="center"
         android:background="@color/white">
 
-    <LinearLayout
-            android:layout_width="200dp"
-            android:layout_height="300dp"
-            android:background="@drawable/group_header"
-            android:id="@+id/banner"
-            android:gravity="center" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:background="@drawable/group_header"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/banner" >
+
+    </RelativeLayout>
 
     <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Election Observation"
-            android:textColor="@color/color1"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:id="@+id/groupName"
-            android:paddingTop="10dp"
-            android:fontFamily="@font/poppinsbold"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Election Observation"
+        android:textColor="@color/color1"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:textSize="20dp"
+        android:id="@+id/groupName"
+        android:fontFamily="@font/poppinsbold"/>
+
 
     <LinearLayout
-            android:layout_width="150dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/green_card2"
             android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
             android:id="@+id/join"
-            android:layout_marginTop="10dp"
             android:gravity="center">
         <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="20dp"
@@ -45,7 +50,7 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Join here"
+                android:text="Join the conversation"
                 android:textColor="@color/white"
                 android:paddingLeft="5dp"
                 android:fontFamily="@font/poppinsregular"

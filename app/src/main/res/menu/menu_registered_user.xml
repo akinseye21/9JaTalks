@@ -5,18 +5,18 @@
                 Add menu items here
                 Menu items with  Title
         -->
-        <item
-                android:id="@+id/timeline"
-                android:title="Timeline" />
-        <item
-                android:id="@+id/profile"
-                android:title="Profile" />
-        <item
-                android:id="@+id/notifications"
-                android:title="Notifications" />
-        <item
-                android:id="@+id/settings"
-                android:title="Settings" />
+<!--        <item-->
+<!--                android:id="@+id/timeline"-->
+<!--                android:title="Timeline" />-->
+<!--        <item-->
+<!--                android:id="@+id/profile"-->
+<!--                android:title="Profile" />-->
+<!--        <item-->
+<!--                android:id="@+id/notifications"-->
+<!--                android:title="Notifications" />-->
+<!--        <item-->
+<!--                android:id="@+id/settings"-->
+<!--                android:title="Settings" />-->
         <item
                 android:id="@+id/logout"
                 android:title="Log Out" />

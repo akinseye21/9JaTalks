@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#00000000">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/poppinsregular"
+        android:text="X"
+        android:id="@+id/close"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/white_card">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/green_card" />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                app:civ_border_overlay="true"
+                android:layout_centerInParent="true"
+                app:civ_circle_background_color="@color/white"
+                android:src="@drawable/user_icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/poppinsbold"
+                android:text="Register an account"
+                android:textColor="#696b6e"
+                android:textSize="14dp" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To access this section, you have to be a registered user.\nKindly register or login using the button below"
+            android:textColor="#000000"
+            android:padding="20dp"
+            android:textSize="14dp"
+            android:fontFamily="@font/poppinsmedium"
+            android:gravity="center"/>
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/green_card"
+            android:layout_marginTop="10dp"
+            android:text="Log into your account"
+            android:textAllCaps="false"
+            android:textSize="10dp"
+            android:textColor="@color/white"
+            android:id="@+id/login"
+            android:fontFamily="@font/poppinsmedium"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/createaccount"
+            android:text="Create an account"
+            android:textSize="10dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#5e000000"
+            android:fontFamily="@font/poppinsmedium"/>
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

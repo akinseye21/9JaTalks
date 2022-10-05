@@ -28,6 +28,9 @@ android {
 }
 
 dependencies {
+//    implementation 'live.videosdk:android-sdk:0.0.23'
+    // library to perform Network call to generate a meeting id
+//    implementation 'com.amitshekhar.android:android-networking:1.0.2'
 
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
@@ -39,6 +42,12 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0' //circular imageview
 
     implementation 'com.github.bumptech.glide:glide:4.13.2' //glide
+    implementation 'com.facebook.android:facebook-login:latest.release'
+
+    //send email
+    implementation 'com.sun.mail:android-mail:1.6.0'
+    implementation 'com.sun.mail:android-activation:1.6.0'
+
 //    implementation files('libs\\YouTubeAndroidPlayerApi.jar')
 //    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0'
 //    implementation 'com.github.barteksc:pdfium-android:1.8.2'

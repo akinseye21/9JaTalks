@@ -135,12 +135,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="300dp"
                             android:layout_marginBottom="60dp"
+                            android:layout_marginTop="20dp"
                             android:id="@+id/rel">
 
                             <WebView
+                                android:id="@+id/webview"
                                 android:layout_width="match_parent"
-                                android:layout_height="300dp"
-                                android:id="@+id/webview"/>
+                                android:layout_height="300dp" />
 
                             <ProgressBar
                                 android:layout_width="wrap_content"
@@ -152,15 +153,91 @@
 
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:gravity="center"
                             android:text="View Document"
                             android:textColor="@color/color2"
                             android:textStyle="bold"
                             android:id="@+id/downloadDocument"
-                            android:paddingLeft="10dp"
+                            android:background="@drawable/new_login3"
+                            android:padding="10dp"
                             android:layout_marginBottom="50dp"
                             android:fontFamily="@font/poppinsbold"/>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:background="#ffffff">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="20dp"
+                                android:text="SHARE THIS DOCUMENT"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/poppinsregular"/>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="10dp">
+
+                                <View
+                                    android:layout_width="80dp"
+                                    android:layout_height="5dp"
+                                    android:background="@color/md_grey_400"/>
+                                <View
+                                    android:layout_width="80dp"
+                                    android:layout_height="5dp"
+                                    android:background="@color/color1"/>
+                                <View
+                                    android:layout_width="80dp"
+                                    android:layout_height="5dp"
+                                    android:background="@color/md_grey_400"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="20dp">
+
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:id="@+id/facebook"
+                                    android:src="@drawable/facebook"/>
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:id="@+id/twitter"
+                                    android:src="@drawable/twitter"/>
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:id="@+id/gmail"
+                                    android:src="@drawable/gmail"/>
+                                <ImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_margin="10dp"
+                                    android:id="@+id/instagram"
+                                    android:src="@drawable/instagram"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
                 </ScrollView>

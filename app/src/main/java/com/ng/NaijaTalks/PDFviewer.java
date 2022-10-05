@@ -1,10 +1,14 @@
 package com.ng.NaijaTalks;
 
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 import android.app.AlertDialog;
 import android.app.DownloadManager;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -20,6 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.progressindicator.CircularProgressIndicator;
 
@@ -78,6 +83,9 @@ public class PDFviewer extends AppCompatActivity {
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //permission
+                ActivityCompat.requestPermissions(PDFviewer.this, new String[]{READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(PDFviewer.this);
                 alertDialogBuilder.setMessage("Are you sure you want to download "+title+"?");
